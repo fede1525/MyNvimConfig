@@ -38,6 +38,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
 set background=dark 
+colorscheme gruvbox
 
 let mapleader = ";" " Re-map leader key to => ;
 
@@ -85,4 +86,3 @@ let g:telescope_find_files_recursive = 1
 
 " Telescope end
 
-colorscheme gruvbox
