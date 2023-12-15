@@ -43,7 +43,7 @@ colorscheme kanagawa
 
 let mapleader = ";" " Re-map leader key to => ;
 
-" Terminal Function
+" Terminal function
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
@@ -75,9 +75,16 @@ tnoremap :q! <C-\><C-n>:q!<CR>
 
 map tv :lcd %:p:h<CR>:vs<CR><C-w><C-w>:set nonu<CR>:te<CR>i
 map th :lcd %:p:h<CR>:sp<CR><C-w><C-w>:set nonu<CR>:te<CR>i
-"
+" Terminal function end
+
+" Telescope config
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+let g:telescope_find_files_find_command = ['fd', '--type', 'f', '--hidden', '--no-ignore', '--exclude', 'node_modules', '-t', 'file']
+let g:telescope_find_files_recursive = true
+
+" Telescope end
 
