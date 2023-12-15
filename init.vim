@@ -23,7 +23,7 @@ Plug 'https://github.com/preservim/nerdtree' " Nerd Tree
 Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
 Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
 Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
-Plug 'https://github.com/itchyny/vim-gitbranch' " Git branch 
+Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
 Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope 
 Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
 Plug 'https://github.com/sheerun/vim-polyglot' " Language pack
@@ -36,7 +36,6 @@ let g:airline_theme= "wombat"
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
-let g:airline#extensions#branch#enabled = 1
 
 colorscheme kanagawa
 
