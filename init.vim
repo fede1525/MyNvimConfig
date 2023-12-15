@@ -33,13 +33,13 @@ Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
 
 call plug#end()
 
+let g:kanagawa_theme = "dragon"
 let g:airline_theme= "wombat" 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
 
 colorscheme kanagawa
-let g:kanagawa_theme = "dragon"
 
 let mapleader = ";" " Re-map leader key to => ;
 
