@@ -39,7 +39,7 @@ let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
 
 colorscheme kanagawa
-let g:kanagawa_theme = "wave"
+let g:kanagawa_theme = "dragon"
 
 let mapleader = ";" " Re-map leader key to => ;
 
