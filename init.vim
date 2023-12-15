@@ -28,6 +28,7 @@ Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope
 Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
 Plug 'https://github.com/sheerun/vim-polyglot' " Language pack
 Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
+Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
 
 call plug#end()
 
