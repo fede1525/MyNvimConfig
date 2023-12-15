@@ -1,5 +1,6 @@
 set nocompatible
 set showmatch
+set showcmd
 set hlsearch
 set incsearch
 set tabstop=4
