@@ -41,6 +41,8 @@ let g:prettier#config#trailing_comma = 'none'
 
 colorscheme kanagawa
 
+let mapleader = ";" " Re-map leader key to => ;
+
 " Terminal Function
 let g:term_buf = 0
 let g:term_win = 0
