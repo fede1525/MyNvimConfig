@@ -83,8 +83,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-let g:telescope_find_files_find_command = ['fd', '--type', 'f', '--hidden', '--no-ignore', '--exclude', 'node_modules', '-t', 'file']
-let g:telescope_find_files_recursive = true
+let g:telescope_find_files_recursive = 1
 
 " Telescope end
 
