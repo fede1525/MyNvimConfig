@@ -28,6 +28,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
 Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
 Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope
 Plug 'https://github.com/BurntSushi/ripgrep' " Ripgrep 
+Plug 'https://github.com/sharkdp/fd' " Find
 Plug 'williamboman/mason.nvim' " Mason
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
