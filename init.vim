@@ -21,7 +21,7 @@ call plug#begin()
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " Tree sitter
 Plug 'https://github.com/kepano/flexoki-neovim' " Color scheme
 Plug 'https://github.com/preservim/nerdtree' " Nerd Tree
-Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
+Plug 'https://github.com/nvim-tree/nvim-web-devicons' " Webdev icons
 Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
 Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
 Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
@@ -74,25 +74,6 @@ tnoremap :q! <C-\><C-n>:q!<CR>
 map tv :lcd %:p:h<CR>:vs<CR><C-w><C-w>:set nonu<CR>:te<CR>i
 map th :lcd %:p:h<CR>:sp<CR><C-w><C-w>:set nonu<CR>:te<CR>i
 " Terminal function end
-
-" NerdTree and vim-devicons configuration
-let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified"  : "✹",
-  \ "Staged"    : "✚",
-  \ "Untracked" : "✭",
-  \ "Renamed"   : "➜",
-  \ "Unmerged"  : "═",
-  \ "Deleted"   : "✖",
-  \ "Dirty"     : "✗",
-  \ "Clean"     : "✔︎",
-  \ 'Ignored'   : '☒',
-  \ "Unknown"   : "?"
-  \ }
-
-let g:webdevicons_enable = 1
-let g:devicons_enable = 1
-
-" NerdTree nad devicons end
 
 " Telescope config
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
