@@ -19,7 +19,7 @@ syntax on
 call plug#begin()
 
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " Tree sitter
-Plug 'https://github.com/ellisonleao/gruvbox.nvim' " Color scheme
+Plug 'https://github.com/kepano/flexoki-neovim' " Color scheme
 Plug 'https://github.com/preservim/nerdtree' " Nerd Tree
 Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
 Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
@@ -37,8 +37,7 @@ let g:airline_theme= "wombat"
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
-set background=dark 
-colorscheme gruvbox
+colorscheme flexoki-dark
 
 let mapleader = ";" " Re-map leader key to => ;
 
