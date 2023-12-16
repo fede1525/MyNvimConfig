@@ -21,7 +21,7 @@ call plug#begin()
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " Tree sitter
 Plug 'https://github.com/kepano/flexoki-neovim' " Color scheme
 Plug 'https://github.com/preservim/nerdtree' " Nerd Tree
-Plug 'https://github.com/nvim-tree/nvim-web-devicons' " Webdev icons
+Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
 Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
 Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
 Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
