@@ -6,6 +6,7 @@ set incsearch
 set tabstop=4
 set shiftwidth=4
 set number
+set ruler
 set relativenumber
 set wildmode=longest,list
 set cc=90
