@@ -93,6 +93,5 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 let g:telescope_find_files_recursive = 1
-
 " Telescope end
 
