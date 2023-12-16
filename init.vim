@@ -35,7 +35,7 @@ Plug 'https://github.com/mfussenegger/nvim-dap'
 Plug 'https://github.com/rcarriga/nvim-dap-ui'
 Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim' " Linter
 Plug 'https://github.com/ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
-Plug 'Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}' " Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
 Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
 Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
 
