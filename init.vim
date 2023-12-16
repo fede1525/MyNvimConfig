@@ -35,7 +35,6 @@ Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
 call plug#end()
 
 let g:airline_theme= 'wombat'
-let g:airline_powerline_fonts = 1 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
