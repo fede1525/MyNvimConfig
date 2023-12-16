@@ -8,7 +8,7 @@ set shiftwidth=4
 set number
 set relativenumber
 set wildmode=longest,list
-set cc=100
+set cc=90
 set cursorline
 set mouse=a
 set ttyfast
