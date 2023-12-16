@@ -26,7 +26,9 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
 Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
 Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
 Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
-Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope 
+Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope
+Plug 'williamboman/mason.nvim' " Mason
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
 Plug 'https://github.com/sheerun/vim-polyglot' " Language pack
 Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
