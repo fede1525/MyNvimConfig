@@ -89,8 +89,8 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Unknown"   : "?"
   \ }
 
-let g:webdevicons_enable = ['nerdtree']
-let g:devicons_enable = ['nerdtree']
+let g:webdevicons_enable = 1
+let g:devicons_enable = 1
 
 " NerdTree nad devicons end
 
