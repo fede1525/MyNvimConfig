@@ -31,6 +31,9 @@ Plug 'williamboman/mason.nvim' " Mason
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
 Plug 'https://github.com/sheerun/vim-polyglot' " Language pack
+Plug 'https://github.com/mfussenegger/nvim-dap'
+Plug 'https://github.com/rcarriga/nvim-dap-ui'
+Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim' " Linter
 Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
 Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
 
