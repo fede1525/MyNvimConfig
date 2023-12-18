@@ -102,8 +102,6 @@ nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | q | endif
-
 lua << EOF
 require("mason").setup()
 require("telescope").setup()
@@ -142,7 +140,6 @@ local cmp = require'cmp'
     })
   })
 
-  -- Set configuration for specific filetype.
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
       { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
@@ -151,7 +148,6 @@ local cmp = require'cmp'
     })
   })
 
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -159,7 +155,6 @@ local cmp = require'cmp'
     }
   })
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
@@ -171,16 +166,23 @@ local cmp = require'cmp'
 
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['css-lsp
-     eslint-lsp
-     html-lsp
-     lua-language-server
-     pyright
-     rust-analyzer
-     typescript-language-server
-     zls'].setup {
+  local lspconfig = require('lspconfig')
+  local servers = {
+  	'cssls',
+  	'eslint',
+  	'html',
+  	'lua',
+  	'pyright',
+  	'rust-analyzer',
+  	'tsserver',
+  	'zls'
+}
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
     capabilities = capabilities
   }
+end
+
 EOF
 
