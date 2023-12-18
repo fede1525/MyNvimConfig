@@ -96,10 +96,8 @@ let g:telescope_find_files_recursive = 1
 
 " NerdTree config
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') 
-&& b:NERDTree.isTabTree() | quit | endif
-
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | q | endif
