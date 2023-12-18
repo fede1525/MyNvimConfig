@@ -19,16 +19,16 @@ syntax on
 
 call plug#begin()
 
+Plug 'nvim-lua/plenary.nvim' " Plenary
+Plug 'BurntSushi/ripgrep' " Ripgrep 
+Plug 'sharkdp/fd' " Find
+Plug 'preservim/nerdtree' " Nerd Tree
 Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
 Plug 'kepano/flexoki-neovim' " Color scheme
-Plug 'preservim/nerdtree' " Nerd Tree
-Plug 'ryanoasis/vim-devicons' " Dev icons
 Plug 'vim-airline/vim-airline' " Vim-airline
 Plug 'vim-airline/vim-airline-themes' " Airline themes
 Plug 'tpope/vim-fugitive' " Fugitive
 Plug 'nvim-telescope/telescope.nvim' " Telescope
-Plug 'BurntSushi/ripgrep' " Ripgrep 
-Plug 'sharkdp/fd' " Find
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -40,7 +40,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
-Plug 'nvim-lua/plenary.nvim' " Plenary
+Plug 'ryanoasis/vim-devicons' " Dev icons
 
 call plug#end()
 
