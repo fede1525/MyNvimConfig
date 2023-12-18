@@ -102,7 +102,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | q | endif
 
-" Mason
 lua << EOF
 require("mason").setup()
+require("telescope").setup()
 EOF
+
