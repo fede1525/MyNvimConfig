@@ -40,6 +40,7 @@ Plug 'https://github.com/ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
 Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
 Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' } " Md preview
 
 call plug#end()
 
