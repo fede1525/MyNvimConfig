@@ -41,6 +41,7 @@ Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Color for icons
 
 call plug#end()
 
@@ -102,6 +103,10 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | q | endif
 
+" Icon color config
+let g:NERDTreeLimitedSyntax = 1
+
+" Mason
 lua << EOF
 require("mason").setup()
 EOF
