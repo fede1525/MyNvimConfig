@@ -85,7 +85,6 @@ tnoremap :q! <C-\><C-n>:q!<CR>
 
 map tv :lcd %:p:h<CR>:vs<CR><C-w><C-w>:set nonu<CR>:te<CR>i
 map th :lcd %:p:h<CR>:sp<CR><C-w><C-w>:set nonu<CR>:te<CR>i
-" Terminal function end
 
 " Telescope config
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -94,5 +93,9 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 let g:telescope_find_files_recursive = 1
-" Telescope end
 
+" NerdTree config
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
