@@ -19,27 +19,27 @@ syntax on
 
 call plug#begin()
 
-Plug 'https://github.com/nvim-treesitter/nvim-treesitter' " Tree sitter
-Plug 'https://github.com/kepano/flexoki-neovim' " Color scheme
-Plug 'https://github.com/preservim/nerdtree' " Nerd Tree
-Plug 'https://github.com/ryanoasis/vim-devicons' " Dev icons
-Plug 'https://github.com/vim-airline/vim-airline' " Vim-airline
-Plug 'https://github.com/vim-airline/vim-airline-themes' " Airline themes
-Plug 'https://github.com/tpope/vim-fugitive' " Fugitive
-Plug 'https://github.com/nvim-telescope/telescope.nvim' " Telescope
-Plug 'https://github.com/BurntSushi/ripgrep' " Ripgrep 
-Plug 'https://github.com/sharkdp/fd' " Find
-Plug 'williamboman/mason.nvim' " Mason
+Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
+Plug 'kepano/flexoki-neovim' " Color scheme
+Plug 'preservim/nerdtree' " Nerd Tree
+Plug 'ryanoasis/vim-devicons' " Dev icons
+Plug 'vim-airline/vim-airline' " Vim-airline
+Plug 'vim-airline/vim-airline-themes' " Airline themes
+Plug 'tpope/vim-fugitive' " Fugitive
+Plug 'nvim-telescope/telescope.nvim' " Telescope
+Plug 'BurntSushi/ripgrep' " Ripgrep 
+Plug 'sharkdp/fd' " Find
+Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'https://github.com/neovim/nvim-lspconfig' " LSP
-Plug 'https://github.com/sheerun/vim-polyglot' " Language pack
-Plug 'https://github.com/mfussenegger/nvim-dap'
-Plug 'https://github.com/rcarriga/nvim-dap-ui'
-Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim' " Linter
-Plug 'https://github.com/ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " Code completion
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " Snippets
-Plug 'https://github.com/MunifTanjim/prettier.nvim' " Prettier
-Plug 'https://github.com/nvim-lua/plenary.nvim' " Plenary
+Plug 'MunifTanjim/prettier.nvim' " Prettier
+Plug 'nvim-lua/plenary.nvim' " Plenary
 
 call plug#end()
 
