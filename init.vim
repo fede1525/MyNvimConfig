@@ -45,6 +45,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
+Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
 
@@ -109,6 +110,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 lua << EOF
 require("mason").setup()
 require("telescope").setup()
+require("autoclose").setup()
 
 local cmp = require'cmp'
 
