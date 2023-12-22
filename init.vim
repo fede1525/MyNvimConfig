@@ -12,9 +12,10 @@ set wildmode=longest,list
 set cursorline
 set mouse=a
 set ttyfast
+set spell
 set termguicolors
 set encoding=UTF-8
-cd C:\
+cd C:\Repositories
 filetype plugin on 
 syntax on
 
@@ -25,6 +26,7 @@ Plug 'BurntSushi/ripgrep' " Ripgrep
 Plug 'sharkdp/fd' " Find
 Plug 'preservim/nerdtree' " Nerd Tree
 Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
+
 " Color schemes
 Plug 'kepano/flexoki-neovim'
 Plug 'savq/melange-nvim'
@@ -33,6 +35,8 @@ Plug 'vim-airline/vim-airline' " Vim-airline
 Plug 'vim-airline/vim-airline-themes' " Airline themes
 Plug 'tpope/vim-fugitive' " Fugitive
 Plug 'nvim-telescope/telescope.nvim' " Telescope
+
+" LSP
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -48,11 +52,12 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
-Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
+Plug 'jose-elias-alvarez/null-ls.nvim' 
+
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
-Plug 'startup-nvim/startup.nvim'
+Plug 'startup-nvim/startup.nvim' " Startup
 
 call plug#end()
 
@@ -111,6 +116,8 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" LUA Configurations
 
 lua << EOF
 require("mason").setup()
