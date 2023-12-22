@@ -14,7 +14,7 @@ set mouse=a
 set ttyfast
 set termguicolors
 set encoding=UTF-8
-cd C:\Repositories
+cd C:\
 filetype plugin on 
 syntax on
 
@@ -34,6 +34,8 @@ Plug 'vim-airline/vim-airline' " Vim-airline
 Plug 'vim-airline/vim-airline-themes' " Airline themes
 Plug 'tpope/vim-fugitive' " Fugitive
 Plug 'nvim-telescope/telescope.nvim' " Telescope
+Plug 'ixru/nvim-markdown' " Markdown 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' } " Markdown preview
 
 " LSP
 Plug 'williamboman/mason.nvim'
@@ -119,6 +121,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 lua << EOF
 require("mason").setup()
+require("treesitter").setup()
 require("telescope").setup()
 require("autoclose").setup()
 
