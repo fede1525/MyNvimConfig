@@ -121,7 +121,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 lua << EOF
 require("mason").setup()
-require("treesitter").setup()
 require("telescope").setup()
 require("autoclose").setup()
 
