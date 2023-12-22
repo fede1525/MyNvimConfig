@@ -70,6 +70,7 @@ let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
 colorscheme melange 
 
+" Glyph config
 augroup my-glyph-palette
   autocmd! *
   autocmd FileType nerdtree call glyph_palette#apply()
@@ -164,7 +165,7 @@ local cmp = require'cmp'
       end,
     },
     window = {
-       completion = cmp.config.window.bordered(),
+     -- completion = cmp.config.window.bordered(),
        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
@@ -176,7 +177,7 @@ local cmp = require'cmp'
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, 
+      -- { name = 'vsnip' }, 
       { name = 'luasnip' }, 
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -224,6 +225,20 @@ local cmp = require'cmp'
   	'tsserver',
   	'zls'
 }
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP actions',
+  callback = function()
+    local bufmap = function(mode, lhs, rhs)
+      local opts = {buffer = true}
+      vim.keymap.set(mode, lhs, rhs, opts)
+    end
+
+    -- Displays hover information about the symbol under the cursor
+    bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+
+	  end
+})
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
