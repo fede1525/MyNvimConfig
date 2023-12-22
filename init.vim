@@ -17,26 +17,18 @@ set encoding=UTF-8
 cd C:\
 filetype plugin on 
 syntax on 
-let mapleader = ";" 
+let mapleader = "\<Space>" 
 
 call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim' " Plenary
+Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
+Plug 'preservim/nerdtree' " Nerd Tree
+
+" Telescope and find functionalities
+Plug 'nvim-telescope/telescope.nvim' " Telescope
 Plug 'BurntSushi/ripgrep' " Ripgrep 
 Plug 'sharkdp/fd' " Find
-Plug 'preservim/nerdtree' " Nerd Tree
-Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
-
-" Color schemes
-Plug 'kepano/flexoki-neovim'
-Plug 'savq/melange-nvim'
-
-Plug 'vim-airline/vim-airline' " Vim-airline
-Plug 'vim-airline/vim-airline-themes' " Airline themes
-Plug 'tpope/vim-fugitive' " Fugitive
-Plug 'nvim-telescope/telescope.nvim' " Telescope
-Plug 'ixru/nvim-markdown' " Markdown 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' } " Markdown preview
 
 " LSP
 Plug 'williamboman/mason.nvim'
@@ -51,23 +43,29 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'  
 Plug 'hrsh7th/vim-vsnip'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 Plug 'jose-elias-alvarez/null-ls.nvim' 
 
+Plug 'ixru/nvim-markdown' " Markdown 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' } " Markdown preview
+
+" Styling
+Plug 'vim-airline/vim-airline' " Vim-airline
+Plug 'vim-airline/vim-airline-themes' " Airline themes
+Plug 'tpope/vim-fugitive' " Fugitive
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
-Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
-Plug 'lambdalisue/glyph-palette.vim' " Icon colors 
+Plug 'lambdalisue/glyph-palette.vim' " Icon colorscheme
+
+" Color schemes
+Plug 'kepano/flexoki-neovim'
+Plug 'savq/melange-nvim'
 
 call plug#end()
 
 let g:airline_theme= 'distinguished'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:prettier#autoformat = 1
-let g:prettier#config#trailing_comma = 'none'
 colorscheme melange 
 
 " Glyph config
@@ -115,8 +113,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-let g:telescope_find_files_recursive = 1
-
 " NerdTree config
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -142,9 +138,6 @@ let g:glyph_palette#palette = {
 \ 'GlyphPalette9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
 \ 'GlyphPaletteDirectory': [' ', ' ', ' ', ' ', ' ', ' '],}
 
-
-
-
 " LUA Configurations
 
 lua << EOF
@@ -152,16 +145,14 @@ require("mason").setup()
 require("telescope").setup()
 require("autoclose").setup()
 
+-- cmp 
 local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-      --  vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       end,
     },
     window = {
@@ -177,10 +168,7 @@ local cmp = require'cmp'
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      -- { name = 'vsnip' }, 
-      { name = 'luasnip' }, 
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
+       { name = 'vsnip' }, 
     }, {
       { name = 'buffer' },
     })
@@ -214,15 +202,20 @@ local cmp = require'cmp'
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   local lspconfig = require('lspconfig')
   local servers = {
-  	'clangd',
 	'asm_lsp',
 	'cssls',
-  	'eslint',
-  	'html',
-  	'lua_ls',
-  	'pyright',
-  	'rust_analyzer',
-  	'tsserver',
+	'html',
+	'sqlls',
+	'grammarly',
+	'jsonls',
+	'angularls',
+	'clangd',
+	'jdtls',
+	'rust_analyzer',
+	'pyright',
+	'eslint',
+	'lua_ls',
+	'vimls',
   	'zls'
 }
 
@@ -245,40 +238,6 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities
   }
 end
-
--- Prettier
-local null_ls = require("null-ls")
-
-local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-local event = "BufWritePre" -- or "BufWritePost"
-local async = event == "BufWritePost"
-
-null_ls.setup({
-  on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.keymap.set("n", "<Leader>f", function()
-        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-      end, { buffer = bufnr, desc = "[lsp] format" })
-
-      -- format on save
-      vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-      vim.api.nvim_create_autocmd(event, {
-        buffer = bufnr,
-        group = group,
-        callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr, async = async })
-        end,
-        desc = "[lsp] format on save",
-      })
-    end
-
-    if client.supports_method("textDocument/rangeFormatting") then
-      vim.keymap.set("x", "<Leader>f", function()
-        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-      end, { buffer = bufnr, desc = "[lsp] format" })
-    end
-  end,
-})
 
 EOF
 
