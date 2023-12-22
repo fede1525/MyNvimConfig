@@ -12,7 +12,6 @@ set wildmode=longest,list
 set cursorline
 set mouse=a
 set ttyfast
-set spell
 set termguicolors
 set encoding=UTF-8
 cd C:\Repositories
@@ -57,7 +56,6 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
-Plug 'startup-nvim/startup.nvim' " Startup
 
 call plug#end()
 
@@ -187,6 +185,7 @@ local cmp = require'cmp'
   local lspconfig = require('lspconfig')
   local servers = {
   	'clangd',
+	'asm_lsp'
 	'cssls',
   	'eslint',
   	'html',
@@ -237,9 +236,5 @@ null_ls.setup({
   end,
 })
 
--- Startup
-require("startup").setup({theme = "dashboard"}) 
-
 EOF
-
 
