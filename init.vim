@@ -16,7 +16,8 @@ set termguicolors
 set encoding=UTF-8
 cd C:\
 filetype plugin on 
-syntax on
+syntax on 
+let mapleader = ";" 
 
 call plug#begin()
 
@@ -58,6 +59,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
+Plug 'lambdalisue/glyph-palette.vim' " Icon colors 
 
 call plug#end()
 
@@ -68,7 +70,10 @@ let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
 colorscheme melange 
 
-let mapleader = ";" " Re-map leader key to => ;
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType nerdtree call glyph_palette#apply()
+augroup END
 
 " Terminal function
 let g:term_buf = 0
@@ -116,6 +121,28 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Icons 
+let g:glyph_palette#palette = {
+\ 'GlyphPalette1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPalette2': ['', ' ', ' ', ' ', ' ', ' ', '󰡄 ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPalette3': ['λ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ '', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', '', '', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPalette4': [' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPalette6': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPalette7': [' ', ' ', ' ', ' ', ' ', ' ', ' ',
+\ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '] ,
+\ 'GlyphPalette9': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+\ 'GlyphPaletteDirectory': [' ', ' ', ' ', ' ', ' ', ' '],}
+
+
+
 
 " LUA Configurations
 
