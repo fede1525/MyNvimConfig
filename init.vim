@@ -60,6 +60,7 @@ Plug 'lambdalisue/glyph-palette.vim' " Icon colorscheme
 " Color schemes
 Plug 'kepano/flexoki-neovim'
 Plug 'savq/melange-nvim'
+Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
 
