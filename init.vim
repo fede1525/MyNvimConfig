@@ -185,7 +185,7 @@ local cmp = require'cmp'
   local lspconfig = require('lspconfig')
   local servers = {
   	'clangd',
-	'asm_lsp'
+	'asm_lsp',
 	'cssls',
   	'eslint',
   	'html',
