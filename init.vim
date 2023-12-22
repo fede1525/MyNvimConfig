@@ -108,9 +108,10 @@ nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Startify custom header
+" Startify 
 let g:startify_custom_header =
              \ startify#pad(readfile('C:\Users\feder\AppData\Local\nvim\header.txt'))
+let g:highlight StartifyHeader  ctermfg=106
 
 lua << EOF
 require("mason").setup()
