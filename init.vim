@@ -12,7 +12,9 @@ set wildmode=longest,list
 set cursorline
 set mouse=a
 set ttyfast
+set termguicolors
 set encoding=UTF-8
+cd C:\
 filetype plugin on 
 syntax on
 
@@ -59,7 +61,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:prettier#autoformat = 1
 let g:prettier#config#trailing_comma = 'none'
-colorscheme flexoki-dark
+colorscheme melange 
 
 let mapleader = ";" " Re-map leader key to => ;
 
