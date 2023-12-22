@@ -9,7 +9,6 @@ set number
 set ruler
 set relativenumber
 set wildmode=longest,list
-set cc=90
 set cursorline
 set mouse=a
 set ttyfast
@@ -24,7 +23,10 @@ Plug 'BurntSushi/ripgrep' " Ripgrep
 Plug 'sharkdp/fd' " Find
 Plug 'preservim/nerdtree' " Nerd Tree
 Plug 'nvim-treesitter/nvim-treesitter' " Tree sitter
-Plug 'kepano/flexoki-neovim' " Color scheme
+" Color schemes
+Plug 'kepano/flexoki-neovim'
+Plug 'savq/melange-nvim'
+
 Plug 'vim-airline/vim-airline' " Vim-airline
 Plug 'vim-airline/vim-airline-themes' " Airline themes
 Plug 'tpope/vim-fugitive' " Fugitive
@@ -48,7 +50,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
-Plug 'mhinz/vim-startify' " Startify
+Plug 'startup-nvim/startup.nvim'
 
 call plug#end()
 
@@ -107,11 +109,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-" Startify 
-let g:startify_custom_header =
-             \ startify#pad(readfile('C:\Users\feder\AppData\Local\nvim\header.txt'))
-let g:highlight StartifyHeader  ctermfg=106
 
 lua << EOF
 require("mason").setup()
@@ -230,6 +227,9 @@ null_ls.setup({
     end
   end,
 })
+
+-- Startup
+require("startup").setup({theme = "dashboard"}) 
 
 EOF
 
