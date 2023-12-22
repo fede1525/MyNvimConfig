@@ -14,7 +14,7 @@ set mouse=a
 set ttyfast
 set termguicolors
 set encoding=UTF-8
-cd C:\
+cd $HOME
 filetype plugin on 
 syntax on 
 let mapleader = "\<Space>" 
