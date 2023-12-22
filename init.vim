@@ -48,6 +48,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim' " Linter
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'MunifTanjim/prettier.nvim' " Prettier
 Plug 'ryanoasis/vim-devicons' " Dev icons
+Plug 'mhinz/vim-startify' " Startify
 
 call plug#end()
 
@@ -106,6 +107,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree C:/<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Startify custom header
+let g:startify_custom_header =
+             \ startify#pad(readfile('C:\Users\feder\AppData\Local\nvim\header.txt'))
 
 lua << EOF
 require("mason").setup()
@@ -226,4 +231,5 @@ null_ls.setup({
 })
 
 EOF
+
 
