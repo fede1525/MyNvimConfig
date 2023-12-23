@@ -207,16 +207,15 @@ local cmp = require'cmp'
 	'cssls',
 	'html',
 	'sqlls',
-	'grammarly',
+	'denols',
 	'jsonls',
-	'angularls',
 	'clangd',
 	'jdtls',
 	'rust_analyzer',
 	'pyright',
-	'eslint',
 	'lua_ls',
 	'vimls',
+	'marksman',
   	'zls'
 }
 
