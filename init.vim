@@ -17,7 +17,7 @@ set encoding=UTF-8
 cd $HOME
 filetype plugin on 
 syntax on 
-let mapleader = "\<Space>" 
+let mapleader = ";" 
 
 call plug#begin()
 
@@ -63,10 +63,12 @@ Plug 'savq/melange-nvim'
 Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
-
+" Airline config
 let g:airline_theme= 'distinguished'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Default colorscheme
 colorscheme melange 
 
 " Glyph config
@@ -121,7 +123,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " Code action 
-nnoremap <buffer> <leader>t :lua vim.lsp.buf.code_action()<CR>
+nnoremap <buffer> <leader>t <Cmd>:lua vim.lsp.buf.code_action()<CR>
 
 " Icons 
 let g:glyph_palette#palette = {
