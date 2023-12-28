@@ -120,6 +120,9 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" Code action 
+nnoremap <buffer> <leader>t :lua vim.lsp.buf.code_action()<CR>
+
 " Icons 
 let g:glyph_palette#palette = {
 \ 'GlyphPalette1': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
@@ -218,7 +221,6 @@ local cmp = require'cmp'
 	'marksman',
   	'zls'
 }
-
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function()
