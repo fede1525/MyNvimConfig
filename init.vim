@@ -126,7 +126,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Code action 
 nnoremap <buffer> <leader>t <Cmd>:lua vim.lsp.buf.code_action()<CR>
 let g:c_syntax_for_h = 1
-let g:c_syntax_for_C = 1
+let g:c_syntax_for_c = 1
 
 
 " Icons 
