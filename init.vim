@@ -125,9 +125,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Code action 
 nnoremap <buffer> <leader>t <Cmd>:lua vim.lsp.buf.code_action()<CR>
-let g:c_syntax_for_h = 1
-let g:c_syntax_for_c = 1
-
+autocmd BufNewFile,BufRead *.h setlocal filetype=c
+autocmd BufNewFile,BufRead *.c setlocal filetype=c
+autocmd BufNewFile,BufRead *.C setlocal filetype=c
 
 " Icons 
 let g:glyph_palette#palette = {
