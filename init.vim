@@ -63,6 +63,7 @@ Plug 'savq/melange-nvim'
 Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
+
 " Airline config
 let g:airline_theme= 'distinguished'
 let g:airline_powerline_fonts = 1
@@ -124,6 +125,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Code action 
 nnoremap <buffer> <leader>t <Cmd>:lua vim.lsp.buf.code_action()<CR>
+let g:c_syntax_for_h = 1
+let g:c_syntax_for_C = 1
+
 
 " Icons 
 let g:glyph_palette#palette = {
